@@ -1,0 +1,25 @@
+image: coastdigital/php
+
+pipelines:
+  pull-requests:
+    '**':
+     - step:
+        script:
+         - ln -f -s resources/envs/.env.pipelines .env
+         - composer install --no-interaction
+         - php artisan key:generate
+         - vendor/bin/phpcs
+         - vendor/bin/phpunit
+        after-script:
+         - cat storage/logs/*
+        services:
+         - database
+definitions:
+  services:
+    database:
+      image: coastdigital/pipelines-mysql:latest
+      variables:
+        MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
+        MYSQL_DATABASE: 'forge'
+        MYSQL_USER: 'forge'
+        MYSQL_PASSWORD: 'password'

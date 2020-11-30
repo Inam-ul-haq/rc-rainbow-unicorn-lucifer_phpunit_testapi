@@ -1,0 +1,21 @@
+{
+  "name": "rc-rainbow-unicorn-lucifer",
+  "version": "1.0.0",
+  "description": "## Installation Having downloaded the source code, you'll need to rename `.env.example` to `.env` then generate an App Key with `php artisan key:generate` and a JWT Secret with `php artisan jwt:secret`.",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/coast_digital/rc-rainbow-unicorn-lucifer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/coast_digital/rc-rainbow-unicorn-lucifer#readme"
+}
